@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: lightface-hybrid-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT --workers 1
+    envVars:
+      - key: MODEL_PATH
+        value: face_hybrid_int8.onnx
+      - key: META_PATH
+        value: deployment_metadata.json
