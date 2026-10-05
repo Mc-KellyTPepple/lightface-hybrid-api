@@ -1,0 +1,1 @@
+Self-contained package with MobileFaceNet and YuNet models.
